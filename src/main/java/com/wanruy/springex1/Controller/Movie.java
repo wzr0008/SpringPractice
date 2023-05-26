@@ -45,6 +45,18 @@ public class Movie {
         return name;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
     public double getRating() {
         return rating;
     }
