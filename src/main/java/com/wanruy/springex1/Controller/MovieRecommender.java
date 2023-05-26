@@ -1,5 +1,6 @@
 package com.wanruy.springex1.Controller;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,6 +16,10 @@ public class MovieRecommender {
     @Autowired
     public MovieRecommender(@Qualifier("collaborative") Filter filter){
         this.filter=filter;
+    }
+    @PostConstruct
+    public void postConstruct(){
+        System.out.println("The Movie's Post Construct is created");
     }
     public void GettheResult(String movie){
         String[] strings = this.filter.recommendMovies(movie);

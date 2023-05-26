@@ -1,5 +1,7 @@
 package com.wanruy.springex1.Controller;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
@@ -16,16 +18,22 @@ public class ContentBasedFilter implements Filter{
 
     @Autowired
     private Movie movie;
-
+    @PostConstruct
+    public void postConstruct(){
+        System.out.println("This is the ContentBasedFilter PostConstruct");
+    }
     public ContentBasedFilter() {
         instances++;
-        System.out.println("CollaborativeFilter constructor called");
+        System.out.println("ContentBasedFilter constructor called");
     }
 
     public Movie getMovie() {
         return movie;
     }
-
+    @PreDestroy
+    public void preDestroy(){
+        System.out.println("ContentBasedFilter preDestroy called");
+    }
     public static int getInstances(){
         return ContentBasedFilter.instances;
     }
