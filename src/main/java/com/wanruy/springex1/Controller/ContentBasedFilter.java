@@ -5,10 +5,11 @@ import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.swing.text.AbstractDocument;
 
-@Component("content")
+@Service("content")
 public class ContentBasedFilter implements Filter{
     @Override
     public String[] recommendMovies(String movie) {

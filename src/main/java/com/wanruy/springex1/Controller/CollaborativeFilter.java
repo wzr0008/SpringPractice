@@ -2,8 +2,9 @@ package com.wanruy.springex1.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component("collaborative")
+@Service("collaborative")
 public class CollaborativeFilter implements Filter{
     private static int instances= 0;
 
