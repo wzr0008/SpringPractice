@@ -16,8 +16,7 @@ public class SpringEx1Application {
         ConfigurableApplicationContext run = SpringApplication.run(SpringEx1Application.class, args);
 
         MovieRecommender bean2 = run.getBean(MovieRecommender.class);
-        System.out.println(bean2);
-        bean2.GetTheFile();
+        //bean2.InsertMovie(new Movie(3, "Shark Tales", 6.0));
 
     }
 
